@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title> Create Quiz </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <form class="ion-padding" [formGroup]="quizForm" (ngSubmit)="postQuiz()">
+        <ion-item>
+            <ion-input placeholder="Level" formControlName="level" autofocus></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input placeholder="Unit" formControlName="unit" autofocus></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input placeholder="Chapter" formControlName="chapter" autofocus></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input placeholder="Question" formControlName="question" autofocus></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input placeholder="Answer" formControlName="answer"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none"></ion-item>
+
+        <ion-label>Choices</ion-label>
+        <ion-item *ngFor="let choice of choices.controls; let i = index">
+            <ion-input placeholder="Choice" [formControl]="choices.controls[i]"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-button color="primary" slot="end" (click)="addChoice()">+</ion-button>
+        </ion-item>
+
+        <ion-item lines="none"></ion-item>
+        <ion-button color="primary" type="submit" expand="full">Create</ion-button>
+    </form>
+</ion-content>
