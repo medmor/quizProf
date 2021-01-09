@@ -1,0 +1,16 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar color="warning">
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="warning">
+    <ion-card *ngFor="let unit of appMap.currentLevel.children" (click)="onUnitClick(unit)" routerLink="/chapters"
+        color="light">
+        <ion-card-header style="text-align: center; font-weight: bolder; font-size: 1.2em;">
+            {{unit.name}}
+        </ion-card-header>
+    </ion-card>
+</ion-content>

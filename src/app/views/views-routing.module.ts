@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChapterPage } from './chapter/chapter.page';
+import { ChaptersPage } from './chapters/chapters.page';
 import { HomePage } from './home/home.page';
-//import { QuizPage } from './quiz/quiz.page'
-//import { QuizzesPage } from './quizzes/quizzes.page'
+import { LevelsPage } from './levels/levels.page';
+import { UnitsPage } from './units/units.page';
 
 const routes: Routes = [
     { path: 'home', component: HomePage },
-    /*{ path: 'quiz', component: QuizPage },
-    { path: 'quizzes', component: QuizzesPage },*/
+    { path: 'levels', component: LevelsPage },
+    { path: 'units', component: UnitsPage },
+    { path: 'chapters', component: ChaptersPage },
+    { path: 'chapter', component: ChapterPage },
     { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 @NgModule({

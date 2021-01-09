@@ -4,8 +4,8 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\views",
-    "\\src\\app\\views\\quizzes"
+    "\\src\\app\\views\\home"
   ],
-  "SelectedNode": "\\src\\app\\views\\quizzes\\quizzes.page.html",
+  "SelectedNode": "\\src\\app\\views\\home\\home.page.ts",
   "PreviewInSolutionExplorer": false
 }

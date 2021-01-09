@@ -1,0 +1,15 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar color="warning">
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="warning">
+    <ion-card *ngFor="let level of appMap.levels" routerLink="/units" (click)="onLevelClick(level)" color="light">
+        <ion-card-header style="text-align: center; font-weight: bolder; font-size: 1.2em;">
+            {{level.name}}
+        </ion-card-header>
+    </ion-card>
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-button *ngIf="section.parent" (click)="onBackButtonClick()" fill="clear" color="dark"
+    style="position:absolute;top:-8px;right: -15px;z-index: 100;">
+    <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+</ion-button>
+
+<ion-item [innerHTML]="section.title" color="success">
+</ion-item>
+
+<ion-card *ngFor="let child of section.children" color="light">
+    <ion-card-header *ngIf="child.type=='Section';else Content" [innerHTML]="child.title"
+        (click)="onSectionClick(child)">
+    </ion-card-header>
+    <ng-template #Content>
+        <content-view [content]="child"></content-view>
+    </ng-template>
+</ion-card>

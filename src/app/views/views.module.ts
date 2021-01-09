@@ -3,14 +3,18 @@ import { CommonModule } from '@angular/common';
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HomePage } from '../views/home/home.page';
+import { ChapterPage } from '../views/chapter/chapter.page';
 import { ViewsRoutingModule } from './views-routing.module';
 import { IonicModule } from '@ionic/angular';
-//import { QuizPage } from './quiz/quiz.page';
-//import { QuizzesPage } from './quizzes/quizzes.page';
+import { SectionViewComponent } from './shared/sectionView/sectionView.component';
+import { LevelsPage } from './levels/levels.page';
+import { UnitsPage } from './units/units.page';
+import { ChaptersPage } from './chapters/chapters.page';
+import { HomePage } from './home/home.page';
+import { ContentViewComponent } from './shared/contentView/contentView.component';
 
 @NgModule({
-    declarations: [HomePage, /*QuizPage, QuizzesPage*/],
+    declarations: [ChapterPage, LevelsPage, UnitsPage, SectionViewComponent, ChaptersPage, HomePage, ContentViewComponent],
     imports: [IonicModule, CommonModule, ViewsRoutingModule, FormsModule, ReactiveFormsModule],
 })
 export class ViewsModule { }
