@@ -1,16 +1,18 @@
-<ng-container *ngIf="content.type=='SimpleContent'; else Figure">
-    <ion-card-content [innerHTML]="content.content"></ion-card-content>
+<ng-container [ngSwitch]="content.type">
+    <simple-content-view *ngSwitchCase="'SimpleContent'" [content]='content'></simple-content-view>
+    <figure-view *ngSwitchCase="'Figure'" [content]='content'></figure-view>
+    <ng-container *ngSwitchCase="'Activity'">
+        <ng-container *ngFor="let child of content.children">
+            <content-view [content]="child"></content-view>
+        </ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'ActivityQuestion'">
+        <simple-content-view [content]='content.children[0]'></simple-content-view>
+        <ion-button expand="full" (click)="presentModal()">Réponse</ion-button>
+    </ng-container>
+    <ng-container *ngSwitchCase="'ActivityAnswer'">
+        <ng-container *ngFor="let child of content.children">
+            <content-view [content]="child"></content-view>
+        </ng-container>
+    </ng-container>
 </ng-container>
-<ng-template #Figure>
-    <ng-container *ngIf="content.type=='Figure'; else Activity">
-        <ion-card-content>
-            <img [src]="appMap.getCurrentChapterUrl()+'figures/'+content.content.substring(3,content.content.length-4)+'.png'"
-                [alt]="appMap.getCurrentChapterUrl()+'figures/'+content.content.substring(3,content.content.length-4)+'.png'" />
-        </ion-card-content>
-    </ng-container>
-</ng-template>
-<ng-template #Activity>
-    <ng-container *ngFor="let child of content.children">
-        <content-view [content]="child"></content-view>
-    </ng-container>
-</ng-template>

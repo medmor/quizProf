@@ -1,8 +1,7 @@
 import { AppMapNode } from "../appMapNode.model";
 
-export const unit4 = new AppMapNode('unit4', 'Integration neuro-hormonale', [
-    new AppMapNode('chapter1', 'chapter1', []),
-    new AppMapNode('chapter2', 'chapter2', []),
-    new AppMapNode('chapter3', 'chapter3', [])
+export const unit4 = new AppMapNode('unit4', 'Intégration neurohormonale', [
+    new AppMapNode('chapter1', 'Régulation de la fonction reproductrice chez l’Homme', []),
+    new AppMapNode('chapter2', 'Régulation de la pression artérielle', []),
 ])
 

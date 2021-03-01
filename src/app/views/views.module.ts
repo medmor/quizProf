@@ -12,9 +12,21 @@ import { UnitsPage } from './units/units.page';
 import { ChaptersPage } from './chapters/chapters.page';
 import { HomePage } from './home/home.page';
 import { ContentViewComponent } from './shared/contentView/contentView.component';
+import { SimpleContentViewComponent } from './shared/contentView/simpleContentView.component';
+import { FigureViewComponent } from './shared/contentView/figureView.component';
 
 @NgModule({
-    declarations: [ChapterPage, LevelsPage, UnitsPage, SectionViewComponent, ChaptersPage, HomePage, ContentViewComponent],
+    declarations: [
+        ChapterPage,
+        LevelsPage,
+        UnitsPage,
+        SectionViewComponent,
+        ChaptersPage,
+        HomePage,
+        ContentViewComponent,
+        SimpleContentViewComponent,
+        FigureViewComponent
+    ],
     imports: [IonicModule, CommonModule, ViewsRoutingModule, FormsModule, ReactiveFormsModule],
 })
 export class ViewsModule { }
